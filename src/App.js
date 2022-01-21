@@ -38,10 +38,8 @@ function App() {
   console.log("if u can see me i am working")
  
   useEffect(()=>{
-    console.log("im done")
     axios(`https://swapi.dev/api/people/`)
      .then((res)=>{
-       console.log(res.data)
        setPeople(res.data)
      })
      .catch((err) => {

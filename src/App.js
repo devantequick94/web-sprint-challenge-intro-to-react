@@ -33,11 +33,13 @@ const initialPeople = [
 function App() {
 
   const [people, setPeople] = useState(initialPeople)
+  const {currentPage, setCurrentPage} = useState(1)
+  
   console.log("if u can see me i am working")
  
   useEffect(()=>{
     console.log("im done")
-    axios("https://swapi.dev/api/people/")
+    axios(`https://swapi.dev/api/people/`)
      .then((res)=>{
        console.log(res.data)
        setPeople(res.data)
@@ -50,9 +52,12 @@ function App() {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      <button>previous</button>
+      <button>next</button>
       {
         people.map(person => {
-          return<DisplayCharacterCard key={`App.peoplemap.personId-${person.id}`} person={person} />
+          return( <DisplayCharacterCard key={`App.peoplemap.person1994K${person.id}`} person={person} />
+          )
         })
       }
     </div>

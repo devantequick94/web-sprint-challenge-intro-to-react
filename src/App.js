@@ -1,5 +1,8 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './App.css';
+
+
 
 const initialPeople = [
   {
@@ -29,9 +32,17 @@ const initialPeople = [
 function App() {
 
   const [people, setPeople] = useState(initialPeople)
+  console.log("if u can see me i am working")
+ 
+  useEffect(()=>{
+    console.log("im done")
+    axios("https://swapi.dev/api/people/")
+     .then((res)=>{
+       console.log(res.data)
+       setPeople(res.data)
+     })
+  } , [])
   
-  useEffect(()=>{} , [])
-
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>

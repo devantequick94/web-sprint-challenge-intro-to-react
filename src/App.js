@@ -52,15 +52,7 @@ function App() {
       <h1 className="Header">Characters</h1>
       {
         people.map(person => {
-          return<DisplayCharacterCard person={person} />
-          
-          /*(
-            <article key={`App.peoplemap.person${person.id}`}>
-              <img src={person.img} alt={person.name}></img>
-              <h2>{person.name}</h2>
-              <p>{`${person.name} is a ${person.gender} ${person.species} who is currently ${person.status}`}</p>
-            </article> 
-          ) */
+          return<DisplayCharacterCard key={`App.peoplemap.personId-${person.id}`} person={person} />
         })
       }
     </div>

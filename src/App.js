@@ -1,18 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const App = () => {
-  const Initial
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+const initialPeople = [
+  {
+    id: 0,
+    name:"Devante",
+    status: "barely awake",
+    species: "sub-human",
+    gender: "zebra"
+  },
+  {
+    id: 1,
+    name: "Jasmine",
+    status: "unknown",
+    species: "hyumane",
+    gender: "bacon"
+  },
+  {
+    id: 2,
+    name: "Joe",
+    status: "baked",
+    species: "human",
+    gender: "potato",
+  }
+]
 
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+
+function App() {
+
+  const [people, setPeople] = useState(initialPeople)
+  
+  useEffect(()=>{} , [])
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      {
+        people.map(person => {
+          return (
+            <article>
+              <img src={person.img} alt={person.name}></img>
+              <h2>{person.name}</h2>
+              <p>{person.name} is a {person.gender} {person.species} who is currently {person.status}</p>
+            </article>
+          )
+        })
+      }
     </div>
   );
 }

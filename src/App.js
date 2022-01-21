@@ -50,8 +50,6 @@ function App() {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <button>previous</button>
-      <button>next</button>
       {
         people.map(person => {
           return( <DisplayCharacterCard key={`App.peoplemap.person1994K${person.id}`} person={person} />

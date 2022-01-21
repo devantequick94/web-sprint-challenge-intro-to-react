@@ -5,7 +5,7 @@ import './App.css';
 
 
 const initialPeople = [
-  {
+  /**{
     id: 0,
     name:"Devante",
     status: "barely awake",
@@ -25,7 +25,7 @@ const initialPeople = [
     status: "baked",
     species: "human",
     gender: "potato",
-  }
+  }*/
 ]
 
 
@@ -40,6 +40,9 @@ function App() {
      .then((res)=>{
        console.log(res.data)
        setPeople(res.data)
+     })
+     .catch((err) => {
+       console.log("you messed up big time")
      })
   } , [])
   
